@@ -140,7 +140,7 @@ body {
 }
 
 .card-container {
-  max-width: 400px;
+  max-width: 420px;
   width: 100%;
   margin: 0 auto;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
@@ -185,11 +185,11 @@ img {
 }
 
 .card-article {
-  padding: 1rem;
+  padding: 3rem;
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: #333333;
   line-height: 1.1;
