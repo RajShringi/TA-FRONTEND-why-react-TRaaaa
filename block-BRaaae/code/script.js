@@ -13,39 +13,21 @@ function handleMovieSubmit(e) {
   }
 }
 
-function createElement(type, attr, ...children) {
-  const element = document.createElement(type);
-  for (let key in attr) {
-    if (key.startsWith("data-")) {
-      element.setAttribute(key, attr[key]);
-    } else {
-      element[key] = attr[key];
-    }
-  }
-  children.forEach((child) => {
-    if (typeof child === "object") {
-      element.append(child);
-    }
-    if (typeof child === "string") {
-      const node = document.createTextNode(child);
-      element.append(child);
-    }
-  });
-  return element;
-}
+const createElement = React.createElement;
 
 function createUI() {
-  movieList.innerHTML = "";
-  allMovies.forEach((movie, index) => {
+  const ui = allMovies.map((movie, index) => {
     const li = createElement(
       "li",
       { className: "movie" },
-      createElement("input", {
-        className: "movieStatus",
-        "data-index": index,
-        type: "checkbox",
-        checked: movie.status,
-      }),
+      createElement(
+        "p",
+        {
+          className: "movieStatus",
+          "data-index": index,
+        },
+        `${movie.status ? "watched" : "watch"}`
+      ),
       createElement("p", {}, movie.movie),
       createElement(
         "button",
@@ -53,9 +35,10 @@ function createUI() {
         "❌"
       )
     );
-
-    movieList.append(li);
+    return li;
   });
+  console.log(ui);
+  ReactDOM.render(ui, movieList);
 }
 movieInput.addEventListener("keyup", handleMovieSubmit);
 movieList.addEventListener("click", (e) => handleClick(e));
