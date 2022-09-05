@@ -13,23 +13,47 @@ function handleMovieSubmit(e) {
   }
 }
 
+function createElement(type, attr, ...children) {
+  const element = document.createElement(type);
+  for (let key in attr) {
+    if (key.startsWith("data-")) {
+      element.setAttribute(key, attr[key]);
+    } else {
+      element[key] = attr[key];
+    }
+  }
+  children.forEach((child) => {
+    if (typeof child === "object") {
+      element.append(child);
+    }
+    if (typeof child === "string") {
+      const node = document.createTextNode(child);
+      element.append(child);
+    }
+  });
+  return element;
+}
+
 function createUI() {
   movieList.innerHTML = "";
   allMovies.forEach((movie, index) => {
-    const li = document.createElement("li");
-    li.classList.add("movie");
-    const input = document.createElement("input");
-    input.classList.add("movieStatus");
-    input.setAttribute("data-index", index);
-    input.type = "checkbox";
-    input.checked = movie.status;
-    const p = document.createElement("p");
-    p.innerText = movie.movie;
-    const button = document.createElement("button");
-    button.classList.add("btn-del");
-    button.innerText = "❌";
-    button.setAttribute("data-index", index);
-    li.append(input, p, button);
+    const li = createElement(
+      "li",
+      { className: "movie" },
+      createElement("input", {
+        className: "movieStatus",
+        "data-index": index,
+        type: "checkbox",
+        checked: movie.status,
+      }),
+      createElement("p", {}, movie.movie),
+      createElement(
+        "button",
+        { className: "btn-del", "data-index": index },
+        "❌"
+      )
+    );
+
     movieList.append(li);
   });
 }
