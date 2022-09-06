@@ -87,8 +87,8 @@
         );
       };
 
-      const Articles = (articles) => {
-        const a = articles.map((article, i) => (
+      const Articles = (props) => {
+        const a = props.articles.map((article, i) => (
           <Article
             key={i}
             title={article.title}
@@ -103,7 +103,10 @@
         console.log(a);
         return a;
       };
-      ReactDOM.render(Articles(articles), document.querySelector(".root"));
+      ReactDOM.render(
+        <Articles articles={articles} />,
+        document.querySelector(".root")
+      );
     </script>
   </body>
 </html>
