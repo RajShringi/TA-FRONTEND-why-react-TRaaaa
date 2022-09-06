@@ -31,10 +31,10 @@
         const links = ["Home", "About", "Contact"];
         return (
           <div className="container">
-            <header className="header">
+            <header className="header flex justify-between items-center">
               <a href="#">NEWS</a>
               <nav>
-                <ul>
+                <ul className="flex justify-between items-center">
                   {links.map((link) => {
                     return (
                       <li key={link}>
