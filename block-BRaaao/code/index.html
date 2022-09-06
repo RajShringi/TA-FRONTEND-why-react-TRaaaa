@@ -25,6 +25,51 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="text/babel"></script>
+    <script type="text/babel">
+      // Header
+      function Header() {
+        const links = ["Home", "About", "Contact"];
+        return (
+          <div className="container">
+            <header className="header">
+              <a href="#">NEWS</a>
+              <nav>
+                <ul>
+                  {links.map((link) => {
+                    return (
+                      <li key={link}>
+                        <a href="#">{link}</a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+            </header>
+          </div>
+        );
+      }
+      // Hero
+      function Hero() {
+        return (
+          <>
+            <section className="hero"></section>
+          </>
+        );
+      }
+      // Articles
+      function Articles() {
+        return <></>;
+      }
+      // Article
+      function Article() {
+        return <></>;
+      }
+      // Footer
+      function Footer() {
+        return <></>;
+      }
+
+      ReactDOM.render(<Header />, document.getElementById("root"));
+    </script>
   </body>
 </html>
