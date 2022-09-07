@@ -233,10 +233,19 @@ body {
   overflow: hidden;
 }
 .article .title-container {
-  padding: 0.3rem 0.4rem;
+  padding: 0.5rem;
 }
 .article h2 {
   font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.readMore {
+  background: #333;
+  color: #fff;
+  display: inline-block;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 5px;
 }
 
 .footer {
