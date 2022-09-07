@@ -30,20 +30,24 @@
       function Header() {
         const links = ["Home", "About", "Contact"];
         return (
-          <div className="container">
-            <header className="header flex justify-between items-center">
-              <a href="#">NEWS</a>
-              <nav>
-                <ul className="flex justify-between items-center">
-                  {links.map((link) => {
-                    return (
-                      <li key={link}>
-                        <a href="#">{link}</a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </nav>
+          <div>
+            <header className="header">
+              <div className="container flex justify-between items-center">
+                <a className="logo" href="#">
+                  NEWS
+                </a>
+                <nav>
+                  <ul className="flex justify-between items-center">
+                    {links.map((link) => {
+                      return (
+                        <li className="nav-list" key={link}>
+                          <a href="#">{link}</a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </nav>
+              </div>
             </header>
           </div>
         );

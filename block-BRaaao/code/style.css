@@ -150,10 +150,30 @@ table {
 a {
   text-decoration: none;
   color: #333;
+  display: inline-block;
 }
 
 body {
   color: #333;
   font-family: "Nunito", sans-serif;
   line-height: 1.5;
+}
+
+.header {
+  padding: 1rem 0;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.nav-list {
+  padding: 0 1rem;
+  margin: 0 2rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.nav-list:hover {
+  border-bottom: 2px solid #333;
 }
