@@ -26,6 +26,15 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
+      //App
+      function App() {
+        return (
+          <>
+            <Header />
+            <Hero />
+          </>
+        );
+      }
       // Header
       function Header() {
         const links = ["Home", "About", "Contact"];
@@ -56,7 +65,17 @@
       function Hero() {
         return (
           <>
-            <section className="hero"></section>
+            <section className="hero">
+              <div className="img-container">
+                <article>
+                  <h1>Lorem ipsum dolor sit.</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Maiores, pariatur. Lorem ipsum dolor sit amet consectetur.
+                  </p>
+                </article>
+              </div>
+            </section>
           </>
         );
       }
@@ -73,7 +92,7 @@
         return <></>;
       }
 
-      ReactDOM.render(<Header />, document.getElementById("root"));
+      ReactDOM.render(<App />, document.getElementById("root"));
     </script>
   </body>
 </html>
