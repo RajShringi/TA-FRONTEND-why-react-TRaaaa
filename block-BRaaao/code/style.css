@@ -146,6 +146,16 @@ table {
 .items-center {
   align-items: center;
 }
+.itmes-start {
+  align-items: flex-start;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-30 {
+  flex: 0 1 30%;
+}
 
 a {
   text-decoration: none;
@@ -194,6 +204,7 @@ body {
   justify-content: center;
   align-items: center;
   color: #fff;
+  margin-bottom: 4rem;
 }
 
 .hero article {
@@ -206,5 +217,24 @@ body {
   font-size: 3rem;
 }
 .hero p {
+  font-size: 1.1rem;
+}
+
+.article img {
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.article {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin-bottom: 1.8rem;
+  overflow: hidden;
+}
+.article .title-container {
+  padding: 0.3rem 0.4rem;
+}
+.article h2 {
   font-size: 1.1rem;
 }
