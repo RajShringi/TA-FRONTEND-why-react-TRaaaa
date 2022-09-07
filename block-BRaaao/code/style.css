@@ -239,6 +239,10 @@ body {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
+
+.article p {
+  color: rgb(88, 87, 87);
+}
 .readMore {
   background: #333;
   color: #fff;
