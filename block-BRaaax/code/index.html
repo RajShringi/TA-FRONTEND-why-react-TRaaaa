@@ -18,31 +18,46 @@
   </head>
   <body>
     <div id="root"></div>
-    <button disabled>Hello</button>
     <script type="text/babel">
+      let buttonSizes = {
+        LARGE: "large",
+        MEDIUM: "medium",
+        SMALL: "small",
+      };
+      let buttonTypes = {
+        PRIMARY: "primary",
+        SECONDARY: "secondary",
+        TERTIRAY: "tertiary",
+      };
       function App() {
         return (
           <>
-            <Button label="Button" size="large" type="primary" />
+            <Button label="first" size="large" type="primary" />
             <Button label="Button" size="medium" type="secondary" />
             <Button
               label="Button"
-              size="small"
-              type="tertiary"
-              disabled={true}
+              size={buttonSizes.SMALL}
+              type={buttonTypes.TERTIRAY}
+              disabled={false}
               onClickHandler={() => alert("You Clicked Me!")}
             />
+            <Button size={buttonSizes.MEDIUM} type={buttonTypes.TERTIRAY} />
           </>
         );
       }
       function Button(props) {
+        function getStyles() {
+          const { size = buttonSizes.MEDIUM, type = buttonTypes.PRIMARY } =
+            props;
+          return `btn ${size} ${type}`;
+        }
         return (
           <button
             onClick={props.onClickHandler}
-            className={`btn ${props.size} ${props.type}`}
+            className={getStyles()}
             disabled={props.disabled}
           >
-            {props.label}
+            {props.label || "Button"}
           </button>
         );
       }
