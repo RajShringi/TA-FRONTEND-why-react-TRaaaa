@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.btn {
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 2rem;
+}
+
+.small {
+  font-size: 0.9rem;
+  padding: 0.1rem 0.4rem;
+}
+.medium {
+  font-size: 1.3rem;
+  padding: 0.3rem 0.6rem;
+}
+.large {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+}
+.primary {
+  background: rgb(205, 84, 84);
+}
+.secondary {
+  background: rgb(106, 84, 205);
+}
+.tertiary {
+  background: rgb(84, 163, 205);
+}
